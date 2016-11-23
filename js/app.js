@@ -17,21 +17,35 @@ jQuery(document).ready(function ($) {
      	dots:true,
         responsive: [
  {
-      breakpoint: 860,
+      breakpoint: 1050,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 5,
         slidesToScroll: 1,
       }
     },
     {
-      breakpoint: 600,
+      breakpoint: 890,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 730,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 570,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1
       }
     },
     {
-      breakpoint: 420,
+      breakpoint: 380,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1
@@ -42,7 +56,7 @@ jQuery(document).ready(function ($) {
 		  ]
     });
      $('.slider').slick({
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 4000,
         speed: 1000,
         arrows: false,
@@ -54,8 +68,32 @@ jQuery(document).ready(function ($) {
         initialSlide: 0,
         cssEase:'linear',
         draggable:false,
-    });
+            });
+ $('.news-slider').slick({
+        autoplay: false,
+        autoplaySpeed: 4000,
+        speed: 1000,
+        arrows: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        pauseOnHover: false,
+        dots:true,
+        initialSlide: 0,
+        prevArrow: '<span class="news-slider-prev news-slider-nav" aria-label="previous"></span>',
+        nextArrow: '<span class="news-slider-next news-slider-nav" aria-label="next"></span>',
+         responsive: [
+			 {
+			      breakpoint: 860,
+			      settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1,
+			      }
+			    }
 
+		    
+		  ]
+
+    });
 jQuery(document).ready(function() { 
    
     var overlay = $('#overlay');
@@ -90,7 +128,7 @@ jQuery(document).ready(function() {
 
      //menu
    $('.mob_start').click(function(e) {
-    var $mob_part = $('.head-nav_list ');
+    var $mob_part = $('.head-nav');
     if ($mob_part.hasClass('m_menu')) {
         $mob_part.removeClass('m_menu');
          $(this).removeClass('active');
